@@ -1,0 +1,1 @@
+# Nvim configuration and plugins
