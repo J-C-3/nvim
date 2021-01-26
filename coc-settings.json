@@ -1,0 +1,21 @@
+{
+    "signature.enable": true,
+    "diagnostic.displayByAle": true,
+    "coc.source.word.filetypes":["text","markdown", "mail"],
+    "python.pythonPath": "/Users/jchristianson/.pyenv/shims/python",
+    "python.venvFolders": ["/Users/jchristianson/.pyenv/"],
+    "python.autoComplete.extraPaths":["$PYENV_VIRTUAL_ENV"],
+    "python.linting.pylintEnabled": false,
+    "python.jediEnabled": false,
+    "python.autoComplete.addBrackets": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.autoUpdateLanguageServer": true,
+    "languageserver": {
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"]
+        }
+    }
+}

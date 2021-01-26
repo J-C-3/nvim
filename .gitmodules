@@ -1,0 +1,282 @@
+[submodule "ale"]
+	path = ale
+	url = ./plugged/ale/
+[submodule "vim-monokai-pro"]
+	path = vim-monokai-pro
+	url = ./plugged/vim-monokai-pro/.git
+[submodule "requirements.txt.vim"]
+	path = requirements.txt.vim
+	url = ./plugged/requirements.txt.vim/.git
+[submodule "vim-preview"]
+	path = vim-preview
+	url = ./plugged/vim-preview/.git
+[submodule "rust.vim"]
+	path = rust.vim
+	url = ./plugged/rust.vim/.git
+[submodule "vim-airline-themes"]
+	path = vim-airline-themes
+	url = ./plugged/vim-airline-themes/.git
+[submodule "vim-airline"]
+	path = vim-airline
+	url = ./plugged/vim-airline/.git
+[submodule "thesaurus_query.vim"]
+	path = thesaurus_query.vim
+	url = ./plugged/thesaurus_query.vim/.git
+[submodule "vim-markdown-preview"]
+	path = vim-markdown-preview
+	url = ./plugged/vim-markdown-preview/.git
+[submodule "vim-racket"]
+	path = vim-racket
+	url = ./plugged/vim-racket/.git
+[submodule "tagbar"]
+	path = tagbar
+	url = ./plugged/tagbar/.git
+[submodule "goyo.vim"]
+	path = goyo.vim
+	url = ./plugged/goyo.vim/.git
+[submodule "typeshed"]
+	path = typeshed
+	url = ./plugged/jedi-vim/pythonx/jedi/jedi/third_party/typeshed/.git
+[submodule "django-stubs"]
+	path = django-stubs
+	url = ./plugged/jedi-vim/pythonx/jedi/jedi/third_party/django-stubs/.git
+[submodule "jedi"]
+	path = jedi
+	url = ./plugged/jedi-vim/pythonx/jedi/.git
+[submodule "parso"]
+	path = parso
+	url = ./plugged/jedi-vim/pythonx/parso/.git
+[submodule "jedi-vim"]
+	path = jedi-vim
+	url = ./plugged/jedi-vim/.git
+[submodule "vim-rest-console"]
+	path = vim-rest-console
+	url = ./plugged/vim-rest-console/.git
+[submodule "vim-gitgutter"]
+	path = vim-gitgutter
+	url = ./plugged/vim-gitgutter/.git
+[submodule "fzf.vim"]
+	path = fzf.vim
+	url = ./plugged/fzf.vim/.git
+[submodule "vim-rhubarb"]
+	path = vim-rhubarb
+	url = ./plugged/vim-rhubarb/.git
+[submodule "vim-textobj-user"]
+	path = vim-textobj-user
+	url = ./plugged/vim-textobj-user/.git
+[submodule "ultisnips"]
+	path = ultisnips
+	url = ./plugged/ultisnips/.git
+[submodule "vim-polyglot"]
+	path = vim-polyglot
+	url = ./plugged/vim-polyglot/.git
+[submodule "vim-man"]
+	path = vim-man
+	url = ./plugged/vim-man/.git
+[submodule "delimitMate"]
+	path = delimitMate
+	url = ./plugged/delimitMate/.git
+[submodule "vim-pencil"]
+	path = vim-pencil
+	url = ./plugged/vim-pencil/.git
+[submodule "limelight.vim"]
+	path = limelight.vim
+	url = ./plugged/limelight.vim/.git
+[submodule "vim-fugitive"]
+	path = vim-fugitive
+	url = ./plugged/vim-fugitive/.git
+[submodule "vim-racer"]
+	path = vim-racer
+	url = ./plugged/vim-racer/.git
+[submodule "vim-abolish"]
+	path = vim-abolish
+	url = ./plugged/vim-abolish/.git
+[submodule "coc.nvim"]
+	path = coc.nvim
+	url = ./plugged/coc.nvim/.git
+[submodule "vim-colorschemes"]
+	path = vim-colorschemes
+	url = ./plugged/vim-colorschemes/.git
+[submodule "vim-go"]
+	path = vim-go
+	url = ./plugged/vim-go/.git
+[submodule "vim-wordy"]
+	path = vim-wordy
+	url = ./plugged/vim-wordy/.git
+[submodule "gruvbox"]
+	path = gruvbox
+	url = ./plugged/gruvbox/.git
+[submodule "vim-plugin-AnsiEsc"]
+	path = vim-plugin-AnsiEsc
+	url = ./plugged/vim-plugin-AnsiEsc/.git
+[submodule "indentLine"]
+	path = indentLine
+	url = ./plugged/indentLine/.git
+[submodule "gruvbox-material"]
+	path = gruvbox-material
+	url = ./plugged/gruvbox-material/.git
+[submodule "vim-commentary"]
+	path = vim-commentary
+	url = ./plugged/vim-commentary/.git
+[submodule "black"]
+	path = black
+	url = ./plugged/black/.git
+[submodule "vim-snippets"]
+	path = vim-snippets
+	url = ./plugged/vim-snippets/.git
+[submodule "vim-litecorrect"]
+	path = vim-litecorrect
+	url = ./plugged/vim-litecorrect/.git
+[submodule "rigel"]
+	path = rigel
+	url = ./plugged/rigel/.git
+[submodule "vim-lexical"]
+	path = vim-lexical
+	url = ./plugged/vim-lexical/.git
+[submodule "vim-textobj-sentence"]
+	path = vim-textobj-sentence
+	url = ./plugged/vim-textobj-sentence/.git
+[submodule "undotree"]
+	path = undotree
+	url = ./plugged/undotree/.git
+[submodule "plugged/vim-monokai-pro"]
+	path = plugged/vim-monokai-pro
+	url = ./plugged/vim-monokai-pro/.git
+[submodule "plugged/requirements.txt.vim"]
+	path = plugged/requirements.txt.vim
+	url = ./plugged/requirements.txt.vim/.git
+[submodule "plugged/vim-preview"]
+	path = plugged/vim-preview
+	url = ./plugged/vim-preview/.git
+[submodule "plugged/rust.vim"]
+	path = plugged/rust.vim
+	url = ./plugged/rust.vim/.git
+[submodule "plugged/vim-airline-themes"]
+	path = plugged/vim-airline-themes
+	url = ./plugged/vim-airline-themes/.git
+[submodule "plugged/vim-airline"]
+	path = plugged/vim-airline
+	url = ./plugged/vim-airline/.git
+[submodule "plugged/thesaurus_query.vim"]
+	path = plugged/thesaurus_query.vim
+	url = ./plugged/thesaurus_query.vim/.git
+[submodule "plugged/vim-markdown-preview"]
+	path = plugged/vim-markdown-preview
+	url = ./plugged/vim-markdown-preview/.git
+[submodule "plugged/vim-racket"]
+	path = plugged/vim-racket
+	url = ./plugged/vim-racket/.git
+[submodule "plugged/tagbar"]
+	path = plugged/tagbar
+	url = ./plugged/tagbar/.git
+[submodule "plugged/goyo.vim"]
+	path = plugged/goyo.vim
+	url = ./plugged/goyo.vim/.git
+[submodule "plugged/jedi-vim/pythonx/jedi/jedi/third_party/typeshed"]
+	path = plugged/jedi-vim/pythonx/jedi/jedi/third_party/typeshed
+	url = ./plugged/jedi-vim/pythonx/jedi/jedi/third_party/typeshed/.git
+[submodule "plugged/jedi-vim/pythonx/jedi/jedi/third_party/django-stubs"]
+	path = plugged/jedi-vim/pythonx/jedi/jedi/third_party/django-stubs
+	url = ./plugged/jedi-vim/pythonx/jedi/jedi/third_party/django-stubs/.git
+[submodule "plugged/jedi-vim/pythonx/jedi"]
+	path = plugged/jedi-vim/pythonx/jedi
+	url = ./plugged/jedi-vim/pythonx/jedi/.git
+[submodule "plugged/jedi-vim/pythonx/parso"]
+	path = plugged/jedi-vim/pythonx/parso
+	url = ./plugged/jedi-vim/pythonx/parso/.git
+[submodule "plugged/jedi-vim"]
+	path = plugged/jedi-vim
+	url = ./plugged/jedi-vim/.git
+[submodule "plugged/vim-rest-console"]
+	path = plugged/vim-rest-console
+	url = ./plugged/vim-rest-console/.git
+[submodule "plugged/vim-gitgutter"]
+	path = plugged/vim-gitgutter
+	url = ./plugged/vim-gitgutter/.git
+[submodule "plugged/ale"]
+	path = plugged/ale
+	url = ./plugged/ale/.git
+[submodule "plugged/fzf.vim"]
+	path = plugged/fzf.vim
+	url = ./plugged/fzf.vim/.git
+[submodule "plugged/vim-rhubarb"]
+	path = plugged/vim-rhubarb
+	url = ./plugged/vim-rhubarb/.git
+[submodule "plugged/vim-textobj-user"]
+	path = plugged/vim-textobj-user
+	url = ./plugged/vim-textobj-user/.git
+[submodule "plugged/ultisnips"]
+	path = plugged/ultisnips
+	url = ./plugged/ultisnips/.git
+[submodule "plugged/vim-polyglot"]
+	path = plugged/vim-polyglot
+	url = ./plugged/vim-polyglot/.git
+[submodule "plugged/vim-man"]
+	path = plugged/vim-man
+	url = ./plugged/vim-man/.git
+[submodule "plugged/delimitMate"]
+	path = plugged/delimitMate
+	url = ./plugged/delimitMate/.git
+[submodule "plugged/vim-pencil"]
+	path = plugged/vim-pencil
+	url = ./plugged/vim-pencil/.git
+[submodule "plugged/limelight.vim"]
+	path = plugged/limelight.vim
+	url = ./plugged/limelight.vim/.git
+[submodule "plugged/vim-fugitive"]
+	path = plugged/vim-fugitive
+	url = ./plugged/vim-fugitive/.git
+[submodule "plugged/vim-racer"]
+	path = plugged/vim-racer
+	url = ./plugged/vim-racer/.git
+[submodule "plugged/vim-abolish"]
+	path = plugged/vim-abolish
+	url = ./plugged/vim-abolish/.git
+[submodule "plugged/coc.nvim"]
+	path = plugged/coc.nvim
+	url = ./plugged/coc.nvim/.git
+[submodule "plugged/vim-colorschemes"]
+	path = plugged/vim-colorschemes
+	url = ./plugged/vim-colorschemes/.git
+[submodule "plugged/vim-go"]
+	path = plugged/vim-go
+	url = ./plugged/vim-go/.git
+[submodule "plugged/vim-wordy"]
+	path = plugged/vim-wordy
+	url = ./plugged/vim-wordy/.git
+[submodule "plugged/gruvbox"]
+	path = plugged/gruvbox
+	url = ./plugged/gruvbox/.git
+[submodule "plugged/vim-plugin-AnsiEsc"]
+	path = plugged/vim-plugin-AnsiEsc
+	url = ./plugged/vim-plugin-AnsiEsc/.git
+[submodule "plugged/indentLine"]
+	path = plugged/indentLine
+	url = ./plugged/indentLine/.git
+[submodule "plugged/gruvbox-material"]
+	path = plugged/gruvbox-material
+	url = ./plugged/gruvbox-material/.git
+[submodule "plugged/vim-commentary"]
+	path = plugged/vim-commentary
+	url = ./plugged/vim-commentary/.git
+[submodule "plugged/black"]
+	path = plugged/black
+	url = ./plugged/black/.git
+[submodule "plugged/vim-snippets"]
+	path = plugged/vim-snippets
+	url = ./plugged/vim-snippets/.git
+[submodule "plugged/vim-litecorrect"]
+	path = plugged/vim-litecorrect
+	url = ./plugged/vim-litecorrect/.git
+[submodule "plugged/rigel"]
+	path = plugged/rigel
+	url = ./plugged/rigel/.git
+[submodule "plugged/vim-lexical"]
+	path = plugged/vim-lexical
+	url = ./plugged/vim-lexical/.git
+[submodule "plugged/vim-textobj-sentence"]
+	path = plugged/vim-textobj-sentence
+	url = ./plugged/vim-textobj-sentence/.git
+[submodule "plugged/undotree"]
+	path = plugged/undotree
+	url = ./plugged/undotree/.git
