@@ -34,7 +34,7 @@ if !exists('g:writing_vim_loaded')
         setglobal noshowmode 
         setglobal noshowcmd
         " set laststatus=0
-        " set scrolloff=4
+        execute 'set scrolloff=' . (winheight(0) / 2)
         autocmd CursorMovedI * if (winline() * 3 >= (winheight(0) * 2))
         \ | norm! zz
         \ | endif
@@ -50,7 +50,7 @@ if !exists('g:writing_vim_loaded')
       autocmd! Focus
       " set showmode 
       " set showcmd
-      " set scrolloff=8
+      set scrolloff=8
       Limelight!
       Goyo!
       call SetBG()
