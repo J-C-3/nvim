@@ -280,3 +280,9 @@
 [submodule "plugged/undotree"]
 	path = plugged/undotree
 	url = ./plugged/undotree/.git
+[submodule "plugged/chadtree"]
+	path = plugged/chadtree
+	url = ./plugged/chadtree/.git
+[submodule "plugged/vim-devicons"]
+	path = plugged/vim-devicons
+	url = ./plugged/vim-devicons/.git

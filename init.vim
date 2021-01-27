@@ -84,7 +84,7 @@ augroup vimrc-make-cmake
 augroup END
 
 " File types that utilize the writing.vim
-let writingFileTypes = ['text', 'markdown', 'html', 'email']
+let writingFileTypes = ['text', 'markdown', 'html', 'mail']
 
 call plug#begin(expand('~/.config/nvim/plugged'))
 
@@ -128,6 +128,10 @@ Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
+
+" File browsing and icons
+Plug 'ms-jpq/chadtree'
+Plug 'ryanoasis/vim-devicons'
 
 " AnsiEsc character coloring support
 Plug 'powerman/vim-plugin-AnsiEsc'
