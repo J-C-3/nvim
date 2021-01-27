@@ -85,7 +85,7 @@ augroup vimrc-make-cmake
 augroup END
 
 " File types that utilize the writing.vim
-let writingFileTypes = ['text', 'markdown', 'html', 'mail']
+let writingFileTypes = ['text', 'markdown', 'html', 'mail', 'note']
 
 call plug#begin(expand('~/.config/nvim/plugged'))
 
@@ -394,6 +394,18 @@ let g:coc_global_extensions = [
   \'coc-yaml',
   \'coc-zi',
   \]
+
+"" More consistent check for pyenv
+let pyenvdir = expand("~/.pyenv")
+if isdirectory(pyenvdir)
+    let g:python3_host_prog = pyenvdir . "/shims/python"
+let g:coc_user_config = {
+    \'python.pythonPath': g:python3_host_prog,
+    \'python.venvFolders': [pyenvdir],
+    \'python.autoComplete.extraPaths':['$PYENV_VIRTUAL_ENV'],
+  \}
+endif
+
 nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
