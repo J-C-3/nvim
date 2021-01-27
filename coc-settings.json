@@ -1,8 +1,6 @@
 {
     "signature.enable": true,
     "diagnostic.displayByAle": true,
-    "coc.source.word.filetypes": ["text", "markdown", "mail", "note"],
-    "nextword.filetypes": ["text", "markdown", "mail", "note"],
     "python.pythonPath": "/Users/jchristianson/.pyenv/shims/python",
     "python.venvFolders": ["/Users/jchristianson/.pyenv/"],
     "python.autoComplete.extraPaths":["$PYENV_VIRTUAL_ENV"],

@@ -372,6 +372,22 @@ vmap < <gv
 vmap > >gv
 
 " Coc
+let g:coc_global_extensions = [
+  \'coc-css',
+  \'coc-docker',
+  \'coc-html',
+  \'coc-json',
+  \'coc-markdownlint',
+  \'coc-marketplace',
+  \'coc-markmap',
+  \'coc-python',
+  \'coc-sh',
+  \'coc-spell-checker',
+  \'coc-ultisnips',
+  \'coc-vimlsp',
+  \'coc-yaml',
+  \'coc-zi',
+  \]
 nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
