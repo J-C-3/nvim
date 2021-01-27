@@ -31,13 +31,19 @@ if !exists('g:writing_vim_loaded')
       Goyo
       Limelight
       augroup Focus
-        setglobal noshowmode 
-        setglobal noshowcmd
-        " set laststatus=0
-        execute 'set scrolloff=' . (winheight(0) / 2)
+        let s:currentScrolloff = trim(execute('set scrolloff'))
+        let s:currentSignColumn = trim(execute('setglobal signcolumn'))
         autocmd CursorMovedI * if (winline() * 3 >= (winheight(0) * 2))
         \ | norm! zz
         \ | endif
+        execute('set scrolloff=' . (winheight(0) / 2))
+        execute('ALEDisable')
+        execute('sign unplace *')
+        set signcolumn=no
+        set noshowmode 
+        set noshowcmd
+        set cmdheight=1
+        set laststatus=0
       augroup END
   endfunction
 
@@ -48,9 +54,9 @@ if !exists('g:writing_vim_loaded')
         silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
       endif
       autocmd! Focus
-      " set showmode 
-      " set showcmd
-      set scrolloff=8
+      execute('set ' . s:currentSignColumn)
+      execute('set ' . s:currentScrolloff)
+      execute('ALEEnable')
       Limelight!
       Goyo!
       call SetBG()
