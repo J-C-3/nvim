@@ -1,4 +1,5 @@
 {
+    "coc.preferences.extensionUpdateCheck":"daily",
     "signature.enable": true,
     "diagnostic.displayByAle": true,
     "python.pythonPath": "/Users/jchristianson/.pyenv/shims/python",
