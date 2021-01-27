@@ -35,8 +35,12 @@ let g:go_def_mapping_enabled = 0
 let g:go_list_type = "quickfix"
 let g:go_fmt_autosave = 1
 let g:go_imports_autosave = 1
-let g:go_imports_commad ="goimports-ordered"
-let g:go_fmt_command = "goimports"
+if executable('goimports-ordered')
+  let g:go_imports_commad ="goimports-ordered"
+  let g:go_fmt_command = "goimports-ordered"
+else
+  let g:go_fmt_command = "goimports"
+endif
 let g:go_fmt_fail_silently = 0
 let g:go_highlight_types = 1
 let g:go_highlight_diagnostic_errors = 1
