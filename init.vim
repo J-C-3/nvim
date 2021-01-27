@@ -389,6 +389,7 @@ let g:coc_global_extensions = [
   \'coc-python',
   \'coc-sh',
   \'coc-spell-checker',
+  \'coc-tsserver',
   \'coc-ultisnips',
   \'coc-vimlsp',
   \'coc-yaml',
