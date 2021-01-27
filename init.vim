@@ -17,11 +17,6 @@ if !filereadable(vimplug_exists)
   autocmd VimEnter * PlugInstall
 endif
 
-" Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
 " Ensure undodir exists and has been created
 let undodir=expand('~/.cache/nvim/undodir')
 if !isdirectory(undodir)
@@ -194,6 +189,11 @@ else
 endif
 
 call plug#end()
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
 "" theming
 let g:colorscheme = 'gruvbox'
