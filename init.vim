@@ -85,7 +85,7 @@ augroup vimrc-make-cmake
 augroup END
 
 " File types that utilize the writing.vim
-let writingFileTypes = ['text', 'markdown', 'html', 'mail', 'note']
+let writingFileTypes = ['text', 'markdown', 'html', 'mail', 'note', 'gitsendemail']
 
 call plug#begin(expand('~/.config/nvim/plugged'))
 
