@@ -85,7 +85,7 @@ augroup vimrc-make-cmake
 augroup END
 
 " File types that utilize the writing.vim
-let writingFileTypes = ['text', 'markdown', 'html', 'mail', 'note', 'gitsendemail']
+let writingFileTypes = ['text', 'markdown', 'mail', 'note', 'gitsendemail']
 
 call plug#begin(expand('~/.config/nvim/plugged'))
 
@@ -386,6 +386,7 @@ let g:coc_global_extensions = [
   \'coc-markdownlint',
   \'coc-marketplace',
   \'coc-markmap',
+  \'coc-prettier',
   \'coc-python',
   \'coc-sh',
   \'coc-spell-checker',
@@ -395,6 +396,10 @@ let g:coc_global_extensions = [
   \'coc-yaml',
   \'coc-zi',
   \]
+
+" Opinionated formatting
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 
 "" More consistent check for pyenv
 let pyenvdir = expand("~/.pyenv")

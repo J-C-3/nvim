@@ -1,5 +1,6 @@
 {
     "coc.preferences.extensionUpdateCheck":"daily",
+    "coc.preferences.formatOnSaveFiletypes":["css", "html", "javascript", "javascriptreact", "markdown", "typescript", "typescriptreact"],
     "signature.enable": true,
     "diagnostic.displayByAle": true,
     "python.linting.pylintEnabled": false,
