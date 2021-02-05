@@ -119,7 +119,7 @@ Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 
 " Language pack
-Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot', {'do': 'make'}
 
 " Theming
 Plug 'gruvbox-community/gruvbox'
