@@ -353,10 +353,10 @@ if executable('rg')
 endif
 
 " snippets
-let g:UltiSnipsExpandTrigger = "<C-e>"
-let g:UltiSnipsJumpForwardTrigger="<C-Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = "<c-e>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
+let g:UltiSnipsEditSplit = "vertical"
 
 " ale initialization
 let g:ale_linters = {}
