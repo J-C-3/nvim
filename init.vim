@@ -160,25 +160,28 @@ Plug 'reedes/vim-textobj-sentence', { 'for': writingFileTypes}
 """ Weasel words and passive voice
 Plug 'reedes/vim-wordy', { 'for': writingFileTypes}
 
+"" Opinionated formatting
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+"" Go
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+
+"" Markdown TODO: Choose between plugins
+Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
+Plug 'tobanw/vim-preview', { 'for': 'markdown' }
+
 "" Python
 """ Black for formatting
 Plug 'psf/black', { 'tag': '19.10b0', 'for': 'python' }
 """ Requirements.txt syntax
 Plug 'raimon49/requirements.txt.vim', { 'for': 'requirements' }
 
-"" Markdown TODO: Choose between plugins
-Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
-Plug 'tobanw/vim-preview', { 'for': 'markdown' }
+"" Racket
+Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
 "" Rust
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-
-"" Go
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
-
-"" Racket
-Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
 " Fuzzy find
 if isdirectory('/usr/local/opt/fzf')
@@ -350,10 +353,10 @@ if executable('rg')
 endif
 
 " snippets
-let g:UltiSnipsExpandTrigger = "<C-e>"
-let g:UltiSnipsJumpForwardTrigger="<C-Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = "<c-e>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
+let g:UltiSnipsEditSplit = "vertical"
 
 " ale initialization
 let g:ale_linters = {}
@@ -383,6 +386,7 @@ let g:coc_global_extensions = [
   \'coc-docker',
   \'coc-html',
   \'coc-json',
+  \'coc-lua',
   \'coc-markdownlint',
   \'coc-marketplace',
   \'coc-markmap',
