@@ -102,7 +102,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Function/class/object browser
-Plug 'majutsushi/tagbar'
+Plug 'liuchengxu/vista.vim'
 
 " Commenting toolkit
 Plug 'tpope/vim-commentary'
@@ -260,12 +260,12 @@ nmap <leader>y :History:<CR>
 
 "git related
 nnoremap <leader>gfi :GFiles<CR>
-nnoremap <leader>ga :Gwrite<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gsh :Gpush<CR>
-nnoremap <leader>gll :Gpull<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gsh :Git push<CR>
+nnoremap <leader>gll :Git pull<CR>
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gr :Gremove<CR>
 nnoremap <leader>o :.Gbrowse<CR> ""Open current line fuGITive
@@ -276,7 +276,7 @@ nmap <leader>gf :diffget //2<CR>
 noremap <leader>cm :Commentary<CR>
 
 " Buffer navigation
-nnoremap <Leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
 " nnoremap <leader>bd :bdelete<CR>
 nnoremap <silent> <Tab> :bnext <CR>
 nnoremap <silent> <S-Tab> :bprev <CR>
@@ -332,7 +332,6 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
 " terminal emulation
@@ -361,9 +360,10 @@ let g:UltiSnipsEditSplit = "vertical"
 " ale initialization
 let g:ale_linters = {}
 
-" Tagbar
-nmap <silent> <leader>tb :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+" Tagbar/Vista
+" nmap <silent> <leader>tb :TagbarToggle<CR>
+" let g:tagbar_autofocus = 1
+nmap <silent> <leader>tb :Vista finder<CR>
 
 " Copy paste cut
 noremap YY "+y<CR>
