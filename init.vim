@@ -259,6 +259,7 @@ nnoremap <leader>ph :wincmd s <bar> :Files <CR>
 nmap <leader>y :History:<CR>
 
 "git related
+let g:github_enterprise_urls = ['https://github.pie.apple.com']
 nnoremap <leader>gfi :GFiles<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gc :Git commit<CR>
