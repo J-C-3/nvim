@@ -263,8 +263,10 @@ nnoremap <leader>pv :wincmd v <bar> :Files <CR>
 nnoremap <leader>ph :wincmd s <bar> :Files <CR>
 nmap <leader>y :History:<CR>
 
-"git related
-let g:github_enterprise_urls = ['https://github.pie.apple.com']
+"git related1
+if has('macunix')
+  source $HOME/.config/nvim/work.vim
+endif
 nnoremap <leader>gfi :GFiles<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gc :Git commit<CR>
@@ -456,6 +458,7 @@ augroup END
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
 
 " Syntax highlight
 " Default highlight is better than polyglot
