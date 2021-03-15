@@ -1,5 +1,6 @@
 " Let F1 fuck off
 map <F1> <nop>
+map! <F1> <nop>
 " Bootstrap Plug
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
@@ -102,7 +103,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Function/class/object browser
-Plug 'liuchengxu/vista.vim'
+Plug 'preservim/tagbar'
 
 " Commenting toolkit
 Plug 'tpope/vim-commentary'
@@ -113,7 +114,7 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'airblade/vim-gitgutter'
 
 " Man page integration
-Plug 'vim-utils/vim-man'
+Plug 'paretje/nvim-man'
 
 " Visualize undo history
 Plug 'mbbill/undotree'
@@ -165,6 +166,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 "" Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'jstemmer/gotags', { 'do': 'go get -u github.com/jstemmer/gotags', 'for': 'go' }
 
 "" Markdown TODO: Choose between plugins
 Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
@@ -235,6 +237,9 @@ let g:netrw_browse_split = 2
 let g:vrfr_rg = 'true'
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
+
+" Open tagbar on certain filetypes
+autocmd FileType go,python call tagbar#autoopen(0)
 
 " Source nvim config file
 nnoremap <leader><CR> :source ~/.config/nvim/init.vim<CR>
@@ -360,10 +365,9 @@ let g:UltiSnipsEditSplit = "vertical"
 " ale initialization
 let g:ale_linters = {}
 
-" Tagbar/Vista
-" nmap <silent> <leader>tb :TagbarToggle<CR>
-" let g:tagbar_autofocus = 1
-nmap <silent> <leader>tb :Vista finder<CR>
+" Tagbar
+let g:tagbar_autofocus = 1
+nmap <silent> <leader>tb :Tagbar<CR>
 
 " Copy paste cut
 noremap YY "+y<CR>
@@ -400,6 +404,9 @@ let g:coc_global_extensions = [
   \'coc-yaml',
   \'coc-zi',
   \]
+
+" Don't load certain CoC extensions for non-text filetypes 
+" autocmd BufEnter * if index(g:writingFileTypes, &filetype) == "-1"| call CocActionAsync('toggleExtension', 'coc-zi')  | endif
 
 " Opinionated formatting
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
