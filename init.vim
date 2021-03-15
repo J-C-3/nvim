@@ -264,6 +264,9 @@ nnoremap <leader>ph :wincmd s <bar> :Files <CR>
 nmap <leader>y :History:<CR>
 
 "git related
+if has('macunix')
+  source $HOME/.config/nvim/work.vim
+endif
 nnoremap <leader>gfi :GFiles<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gc :Git commit<CR>
@@ -296,14 +299,14 @@ vnoremap X "_d
 inoremap <C-c> <esc>
 
 function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <C-space> coc#refresh()
@@ -387,24 +390,24 @@ vmap > >gv
 
 " Coc
 let g:coc_global_extensions = [
-  \'coc-css',
-  \'coc-docker',
-  \'coc-html',
-  \'coc-json',
-  \'coc-lua',
-  \'coc-markdownlint',
-  \'coc-marketplace',
-  \'coc-markmap',
-  \'coc-prettier',
-  \'coc-python',
-  \'coc-sh',
-  \'coc-spell-checker',
-  \'coc-tsserver',
-  \'coc-ultisnips',
-  \'coc-vimlsp',
-  \'coc-yaml',
-  \'coc-zi',
-  \]
+      \'coc-css',
+      \'coc-docker',
+      \'coc-html',
+      \'coc-json',
+      \'coc-lua',
+      \'coc-markdownlint',
+      \'coc-marketplace',
+      \'coc-markmap',
+      \'coc-prettier',
+      \'coc-python',
+      \'coc-sh',
+      \'coc-spell-checker',
+      \'coc-tsserver',
+      \'coc-ultisnips',
+      \'coc-vimlsp',
+      \'coc-yaml',
+      \'coc-zi',
+      \]
 
 " Don't load certain CoC extensions for non-text filetypes 
 " autocmd BufEnter * if index(g:writingFileTypes, &filetype) == "-1"| call CocActionAsync('toggleExtension', 'coc-zi')  | endif
@@ -416,12 +419,12 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "" More consistent check for pyenv
 let pyenvdir = expand("~/.pyenv")
 if isdirectory(pyenvdir)
-    let g:python3_host_prog = pyenvdir . "/shims/python"
-let g:coc_user_config = {
-    \'python.pythonPath': g:python3_host_prog,
-    \'python.venvFolders': [pyenvdir],
-    \'python.autoComplete.extraPaths':['$PYENV_VIRTUAL_ENV'],
-  \}
+  let g:python3_host_prog = pyenvdir . "/shims/python"
+  let g:coc_user_config = {
+        \'python.pythonPath': g:python3_host_prog,
+        \'python.venvFolders': [pyenvdir],
+        \'python.autoComplete.extraPaths':['$PYENV_VIRTUAL_ENV'],
+        \}
 endif
 
 nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
@@ -455,6 +458,7 @@ augroup END
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
 
 " Syntax highlight
 " Default highlight is better than polyglot
