@@ -367,6 +367,7 @@ let g:ale_linters = {}
 
 " Tagbar
 let g:tagbar_autofocus = 1
+let g:tagbar_wrap = 1
 nmap <silent> <leader>tb :Tagbar<CR>
 
 " Copy paste cut
