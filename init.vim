@@ -265,7 +265,7 @@ nmap <leader>y :History:<CR>
 
 "git related
 if has('macunix')
-  source $HOME/.config/nvim/work.vim
+  source $HOME/.config/nvim/secrets.vim
 endif
 nnoremap <leader>gfi :GFiles<CR>
 nnoremap <leader>gw :Gwrite<CR>
