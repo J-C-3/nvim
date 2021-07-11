@@ -1,6 +1,7 @@
 " Let F1 fuck off
 map <F1> <nop>
 map! <F1> <nop>
+
 " Bootstrap Plug
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
@@ -12,7 +13,7 @@ if !filereadable(vimplug_exists)
   endif
   echo "Installing Vim-Plug..."
   echo ""
-  silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://rawhubusercontent.com/junegunn/vim-plug/master/plug.vim"
   let g:not_finish_vimplug = "yes"
 
   autocmd VimEnter * PlugInstall
@@ -25,6 +26,9 @@ if !isdirectory(undodir)
   echo ""
   silent exec "!\mkdir -p " . undodir
 endif
+
+" Set leader to space
+let mapleader = " "
 
 " Defaults
 filetype plugin on
@@ -141,14 +145,16 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 " cURL in nvim!
 Plug 'diepm/vim-rest-console'
 
+" Focus tools
+""" Highlights active paragraph
+Plug 'junegunn/limelight.vim'
+""" Full screen writing mode
+Plug 'junegunn/goyo.vim'
+
 "" Writing tools
 Plug 'reedes/vim-pencil', { 'for': writingFileTypes, 'on': '<Plug>pencil#init()'}
 """ Fancy abbreviation replacements
 Plug 'tpope/vim-abolish', { 'for': writingFileTypes}
-""" Highlights active paragraph
-Plug 'junegunn/limelight.vim', { 'for': writingFileTypes}
-""" Full screen writing mode
-Plug 'junegunn/goyo.vim', { 'for': writingFileTypes}
 """ Better spellcheck mappings
 Plug 'reedes/vim-lexical', { 'for': writingFileTypes}
 """ Better autocorrect
@@ -160,6 +166,12 @@ Plug 'kana/vim-textobj-user', { 'for': writingFileTypes}
 Plug 'reedes/vim-textobj-sentence', { 'for': writingFileTypes}
 """ Weasel words and passive voice
 Plug 'reedes/vim-wordy', { 'for': writingFileTypes}
+""" Writing Prompt Plugin
+Plug 'J-C-3/feed.vim'
+""" Writing Prompt Plugin - Dependency
+Plug 'J-C-3/webapi-vim'
+""" Writing Prompt Plugin - Dependency
+Plug 'tyru/open-browser.vim'
 
 "" Opinionated formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -211,6 +223,7 @@ let g:airline_theme = 'gruvbox'
 
 " highlighting settings
 let g:currentHighlight = 'Normal ctermbg=none guibg=none'
+let loaded_matchparen = 1
 " highlight Normal guibg=0
 " highlight NormalFloat guifg=Gray guibg=DarkGray
 " highlight Pmenu guifg=Gray guibg=DarkGray
@@ -222,15 +235,56 @@ function! SetBG()
   execute 'highlight ' . g:currentHighlight
   redrawstatus
 endfunction
+
 call SetBG()
+
+" Focus tools
+" let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_guifg = 'gray'
+
+function! FocusEnter()
+    Goyo
+    Limelight
+    augroup Focus
+      let s:currentScrolloff = trim(execute('set scrolloff'))
+      let s:currentSignColumn = trim(execute('setglobal signcolumn'))
+      autocmd CursorMovedI * if (winline() * 3 >= (winheight(0) * 2))
+      \ | norm! zz
+      \ | endif
+      execute('set scrolloff=' . (winheight(0) / 2))
+      execute('ALEDisable')
+      execute('sign unplace *')
+      set signcolumn=no
+      set noshowmode 
+      set noshowcmd
+      set cmdheight=1
+      set laststatus=0
+    augroup END
+endfunction
+
+function! FocusLeave()
+  if exists('#Focus')
+    if executable('tmux') && strlen($TMUX)
+      silent !tmux set status on
+      silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+    endif
+    autocmd! Focus
+    execute('set ' . s:currentSignColumn)
+    execute('set ' . s:currentScrolloff)
+    execute('ALEEnable')
+    Limelight!
+    Goyo!
+    call SetBG()
+  endif
+endfunction
+
+map <silent> <leader>fe :call FocusEnter()<CR>
+map <silent> <leader>fl :call FocusLeave()<CR>
 
 " RIPgrep
 if executable('rg')
     let g:rg_derive_root='true'
 endif
-
-let loaded_matchparen = 1
-let mapleader = " "
 
 " netrw
 let g:netrw_browse_split = 2
@@ -349,14 +403,18 @@ tnoremap <silent> <C-p> <C-\><C-n>
 
 " fzf settings
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+set wildignore+=*.o,*.obj,,*.rbc,*.pyc,__pycache__
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
 
 " set ripgrep for fzf
 if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow'
+" set fd for fzf if available
+  if executable('fd')
+    let $FZF_DEFAULT_COMMAND = 'fd --type file --follow --hidden'
+  endif
   set grepprg=rg\ --vimgrep
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 endif
 
 " snippets
